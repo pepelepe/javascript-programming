@@ -9,7 +9,6 @@ let saveEl = document.getElementById('save-el');
 function increment() {
     count += 1;
     countEl.innerText = count;
-    console.log(count);
 }
 
 // Create a function save() which logs out the count when it's called
@@ -23,4 +22,6 @@ function save() {
     count = 0
     countEl.innerText = count;
 }
+
+console.log("Let's count people on the subway!")
 
