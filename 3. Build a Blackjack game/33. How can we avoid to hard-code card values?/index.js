@@ -1,5 +1,5 @@
-let firstCard = 10
-let secondCard = 4
+let firstCard = getRandomCard()
+let secondCard = getRandomCard()
 let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard
 let hasBlackJack = false
@@ -10,6 +10,12 @@ let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 
 // Create a function, getRandomCard(), that always returns the number 5
+
+function getRandomCard() {
+    //let randomCard = 5
+    let randomCard = Math.floor(Math.random()*15)
+    return randomCard
+}
 
 
 function startGame() {
@@ -25,19 +31,22 @@ function renderGame() {
     sumEl.textContent = "Sum: " + sum
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
+        messageEl.style.color = "#ffffff";
     } else if (sum === 21) {
         message = "You've got Blackjack!"
         hasBlackJack = true
+        messageEl.style.color = "gold";
     } else {
         message = "You're out of the game!"
         isAlive = false
+        messageEl.style.color = "red";
     }
     messageEl.textContent = message
 }
 
 
 function newCard() {
-    let card = 6
+    let card = getRandomCard()
     sum += card
     cards.push(card)
     console.log(cards)
