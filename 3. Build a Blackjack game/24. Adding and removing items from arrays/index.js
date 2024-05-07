@@ -12,5 +12,13 @@ let messages = [
 
 let newMessage = "Same here!"
 
+messages.push(newMessage)
+console.log(messages)
+
+// How can you remove the last item in an array? try to google it!
+let removed = messages.pop()
+//messages.pop();
+console.log("pop messages: "+ messages)
 
 
+console.log("removed: " + removed)
